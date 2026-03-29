@@ -222,8 +222,8 @@ if __name__ == "__main__":
     update_time = ""
     if ZoneInfo:
         try:
-            dhaka_tz = ZoneInfo('Asia/Dhaka')
-            update_time = datetime.datetime.now(dhaka_tz).strftime('%Y-%m-%d %I:%M:%S %p')
+            india_tz = ZoneInfo('Asia/Kolkata')
+            update_time = datetime.datetime.now(india_tz).strftime('%Y-%m-%d %I:%M:%S %p')
         except Exception:
             update_time = datetime.datetime.now().strftime('%Y-%m-%d %I:%M:%S %p') + " UTC"
     else: # Fallback for older python
