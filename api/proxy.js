@@ -1,5 +1,5 @@
 // The URL of your raw M3U playlist on GitHub.
-const M3U_URL = 'https://raw.githubusercontent.com/appscreator92-coder/cdn/refs/heads/main/playlist.m3u';
+const M3U_URL = 'https://raw.githubusercontent.com/abusaeeidx/CricHd-playlists-Auto-Update-permanent/refs/heads/main/ALL.m3u';
 
 module.exports = async (req, res) => {
     // 1. Added 'origin' to the query parameters
