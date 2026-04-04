@@ -12,7 +12,7 @@ except ImportError:
 # --- Configuration ---
 CRICHD_BASE_URL = "https://crichd.com.co"
 CRICHD_GO_BASE_URL = "https://go.crichd.tv"
-OUTPUT_M3U_FILE = "siamscrichd.m3u"
+OUTPUT_M3U_FILE = "playlist.m3u"
 EPG_URL = "https://github.com/epgshare01/share/raw/master/epg_ripper_ALL_SOURCES1.xml.gz"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
 
