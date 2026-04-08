@@ -1,8 +1,8 @@
-name: Update CricHD Streams
+name: Update Willow Stream
 
 on:
   schedule:
-    - cron: '*/50 * * * *'
+    - cron: '*/25 * * * *' # Runs every 30 minutes
   workflow_dispatch:
 
 jobs:
@@ -12,22 +12,25 @@ jobs:
       contents: write
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x'
+        python-version: '3.11' # Using a specific version is good practice
+    
+    - name: Install dependencies from requirements.txt
+      run: pip install -r requirements.txt
 
-    - name: Install dependencies
-      run: python -m pip install requests
-
-    - name: Run scraper
-      run: python crichd_scraper.py
+    - name: Run willow_scraper.py
+      run: python willow_scraper.py
 
     - name: Commit and push if there are changes
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add playlist.m3u
-        git diff --staged --quiet || (git commit -m "Update playlist.m3u" && git push)
+        # The 'git diff' command checks if the file has changed. If it has, it commits and pushes.
+        # This prevents empty commits.
+        git diff --staged --quiet || (git commit -m "Update playlist.m3u stream" && git push)
