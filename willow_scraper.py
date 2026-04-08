@@ -166,7 +166,7 @@ if __name__ == "__main__":
             for name, stream_url in sorted(all_streams, key=lambda x: x[0]):
                 f.write(f'#EXTINF:-1,{name}\n')
                 f.write(f'#EXTVLCOPT:http-referrer={FINAL_REFERRER}\n')
-                 f.write(f'#EXTVLCOPT:http-referrer={FINAL_ORIGIN}\n')
+                f.write(f'#EXTVLCOPT:http-referrer={FINAL_ORIGIN}\n')
                 f.write(f"{stream_url}\n")
         logging.info("M3U file written successfully.")
     except Exception as e:
