@@ -98,11 +98,11 @@ if __name__ == "__main__":
         print(f"\nFinal Stream URL:\n{stream_url}\n")
         # Let's create the M3U file as requested previously
         try:
-            with open("siamscrichd.m3u", "w") as f:
+            with open("playlist.m3u", "w") as f:
                 f.write("#EXTM3U\n")
                 f.write("#EXTINF:-1,WILLOW HD\n")
                 f.write(stream_url + "\n")
-            logging.info("--- Successfully created siamscrichd.m3u file ---")
+            logging.info("--- Successfully created playlist.m3u file ---")
         except IOError as e:
             logging.error(f"Failed to write M3U file: {e}")
 
