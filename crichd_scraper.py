@@ -1,210 +1,112 @@
 
+import cloudscraper
 import re
-import subprocess
 import logging
-import datetime
-
-try:
-    from zoneinfo import ZoneInfo
-except ImportError:
-    ZoneInfo = None
+import sys
+import requests # For exception handling
 
 # --- Configuration ---
-CRICHD_BASE_URL = "https://crichd.com.co"
-CRICHD_GO_BASE_URL = "https://go.crichd.tv"
-OUTPUT_M3U_FILE = "playlist.m3u"
-EPG_URL = "https://github.com/epgshare01/share/raw/master/epg_ripper_ALL_SOURCES1.xml.gz"
-USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+INITIAL_URL = "https://streamcrichd.com/update/willowcricket.php"
+STRICT_REFERRER = "https://streamcrichd.com/"
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+REQUESTS_TIMEOUT = 20 # Increased timeout for potential challenges
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# --- Logging Setup ---
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    stream=sys.stdout
+)
 
-def run_command(command):
-    logging.info(f"Running command: {command}")
+def extract_willow_stream():
+    """
+    Uses cloudscraper to bypass Cloudflare and mimic a browser session,
+    handling cookies and headers to extract the stream URL.
+    """
+    logging.info("--- Creating a new cloudscraper session ---")
+    
+    # Use cloudscraper to create a session object that can bypass Cloudflare
+    scraper = cloudscraper.create_scraper(
+        browser={
+            'browser': 'chrome',
+            'platform': 'windows',
+            'desktop': True
+        }
+    )
+    
+    # The default headers in cloudscraper are good, but we must set the correct Referer.
+    scraper.headers.update({
+        'User-Agent': USER_AGENT,
+        'Referer': STRICT_REFERRER
+    })
+
     try:
-        result = subprocess.run(command, capture_output=True, shell=True, check=True, timeout=20)
-        return result.stdout.decode('utf-8', errors='ignore')
-    except subprocess.TimeoutExpired:
-        logging.error(f"Command timed out: {command}")
+        logging.info(f"--- Step 1: Fetching initial page: {INITIAL_URL} ---")
+        initial_response = scraper.get(INITIAL_URL, timeout=REQUESTS_TIMEOUT)
+        initial_response.raise_for_status()
+        initial_content = initial_response.text
+
+        logging.info("--- Step 2: Fetching premium.js script ---")
+        premium_js_match = re.search(r'src=(["\'])//executeandship.com/premium.js\1', initial_content)
+        if not premium_js_match:
+            logging.error("Could not find 'premium.js' script. Aborting.")
+            return None
+
+        premium_js_url = "https:" + "//executeandship.com/premium.js"
+        # This request 'warms up' the session for the target domain
+        scraper.get(premium_js_url, timeout=REQUESTS_TIMEOUT).raise_for_status()
+        logging.info("--- Session 'warmed up' for executeandship.com ---")
+
+        logging.info("--- Step 3: Extracting iframe URL ---")
+        fid_match = re.search(r'fid=(["\'])([^"\']+)\1', initial_content)
+        if not fid_match:
+            logging.error("Could not find 'fid' in the initial page. Aborting.")
+            return None
+
+        fid = fid_match.group(2)
+        iframe_url = f"https://executeandship.com/premiumcr.php?player=desktop&live={fid}"
+
+        logging.info(f"--- Step 4: Fetching player iframe page: {iframe_url} ---")
+        # This is the crucial request that was previously failing
+        player_page_response = scraper.get(iframe_url, timeout=REQUESTS_TIMEOUT)
+        player_page_response.raise_for_status()
+        player_page_content = player_page_response.text
+        logging.info("--- Successfully fetched player page content ---")
+
+        logging.info("--- Step 5: Extracting final stream URL ---")
+        stream_array_match = re.search(r"return \(\[(.*?)\]\.join", player_page_content, re.DOTALL)
+        if not stream_array_match:
+            logging.error("Could not find the stream URL array. Aborting.")
+            return None
+
+        char_list_str = stream_array_match.group(1)
+        char_list = re.findall(r'"([^"]*)"', char_list_str)
+        final_url = "".join(char_list).replace("\\/", "/")
+
+        return final_url
+
+    # Catching the base exception is sufficient as cloudscraper's exceptions inherit from it.
+    except requests.exceptions.RequestException as e:
+        logging.error(f"A network error or Cloudflare challenge failed: {e}")
         return None
-    except subprocess.CalledProcessError as e:
-        logging.error(f"Command failed: {e}\nStderr: {e.stderr.decode('utf-8', errors='ignore') if e.stderr else ''}")
-        return None
-
-# --- gocrichd.tv scraper functions ---
-
-def get_channel_links_go():
-    logging.info(f"Fetching channel links from {CRICHD_GO_BASE_URL}/")
-    main_page_content = run_command(f"curl -L -A '{USER_AGENT}' {CRICHD_GO_BASE_URL}/")
-    if not main_page_content:
-        return []
-    pattern = r'<div class="channels">\s*<a href="([^\"]+)"'
-    channel_links = re.findall(pattern, main_page_content)
-    logging.info(f"Found {len(channel_links)} channel links from {CRICHD_GO_BASE_URL}")
-    return list(dict.fromkeys(channel_links))
-
-def get_stream_link_go(channel_url):
-    logging.info(f"Fetching stream link for go.crichd.tv: {channel_url}")
-    channel_page_content = run_command(f"curl -L -A '{USER_AGENT}' -H 'Referer: {CRICHD_GO_BASE_URL}' '{channel_url}'")
-    if not channel_page_content: return None, None, None
-
-    embeds_match = re.search(r"embeds\[0\]\s*=\s*'(.*?)';", channel_page_content)
-    if not embeds_match:
-        logging.warning(f"Could not find embeds[0] content for {channel_url}")
-        return None, None, None
-    
-    iframe_html_with_escapes = embeds_match.group(1)
-    iframe_html = iframe_html_with_escapes.replace('\\"', '"')
-
-    src_match = re.search(r'src=["\'](.*?)["\']', iframe_html)
-    if not src_match:
-        logging.warning(f"Could not find src in iframe html for {channel_url}. Content: {iframe_html}")
-        return None, None, None
-    
-    iframe_src_1 = src_match.group(1)
-
-    if iframe_src_1.startswith("//"):
-        iframe_src_1 = "https:" + iframe_src_1
-
-    logging.info(f"Fetching first iframe: {iframe_src_1}")
-    iframe_content_1 = run_command(f"curl -L -A '{USER_AGENT}' -H 'Referer: {channel_url}' '{iframe_src_1}'")
-    if not iframe_content_1: return None, None, None
-
-    fid_match = re.search(r'fid="(.*?)"', iframe_content_1)
-    if not fid_match:
-        logging.warning(f"Could not find fid for {channel_url}")
-        return None, None, None
-    fid = fid_match.group(1)
-    logging.info(f"Found fid: {fid}")
-
-    iframe_src_2 = f"https://executeandship.com/premium.php?player=desktop&live={fid}"
-
-    logging.info(f"Fetching second iframe: {iframe_src_2}")
-    iframe_content_2 = run_command(f"curl -L -A '{USER_AGENT}' -H 'Referer: {iframe_src_1}' '{iframe_src_2}'")
-    if not iframe_content_2: return None, None, None
-
-    stream_url_parts_match = re.search(r'return \(\[(.*?)\]\.join', iframe_content_2)
-    if not stream_url_parts_match:
-        logging.warning(f"Could not find stream URL parts for {channel_url}")
-        return None, None, None
-
-    char_array_str = stream_url_parts_match.group(1)
-    char_list = [c.strip().strip('\"') for c in char_array_str.split(',')]
-    stream_url = "".join(char_list).replace('\\/', '/')
-
-    channel_name_match = re.search(r'<title>(.*?)</title>', channel_page_content)
-    raw_name = channel_name_match.group(1).split("|")[0].strip() if channel_name_match else "Unknown Channel"
-
-    return raw_name, stream_url, "https://executeandship.com/"
-
-# --- crichd.com.co scraper functions ---
-
-def get_channel_links_crichd():
-    logging.info(f"Fetching channel links from {CRICHD_BASE_URL}")
-    main_page_content = run_command(f"curl -L -A '{USER_AGENT}' {CRICHD_BASE_URL}")
-    if not main_page_content: return []
-    pattern = r'<li class="has-sub"><a href="(https://crichd.com.co/channels/[^\"]+)"'
-    channel_links = re.findall(pattern, main_page_content)
-    logging.info(f"Found {len(channel_links)} channel links from {CRICHD_BASE_URL}")
-    return channel_links
-
-def get_stream_link_crichd(channel_url):
-    logging.info(f"Fetching stream link for crichd.com.co: {channel_url}")
-    channel_page_content = run_command(f"curl -L -A '{USER_AGENT}' '{channel_url}'")
-    if not channel_page_content: return None, None, None
-
-    player_link_match = re.search(r'<a href=["\'](https://dadocric.st/player(?:2)?\.php\?id=[^"\']+?)["\']', channel_page_content)
-
-    if not player_link_match:
-        logging.warning(f"Could not find dadocric player link in {channel_url}")
-        return None, None, None
-    
-    player_link = player_link_match.group(1).replace('player.php', 'player2.php')
-
-    player_page_content = run_command(f"curl -L -A '{USER_AGENT}' '{player_link}'")
-    if not player_page_content: return None, None, None
-
-    embed_iframe_match = re.search(r'<iframe[^>]+src=["\'](https://cdn.dadocric.st/embed.php\?id=[^"\']+)["\']', player_page_content)
-    if not embed_iframe_match:
-        logging.warning(f"Could not find cdn.dadocric.st iframe in {player_link}")
-        return None, None, None
-    
-    embed_link = embed_iframe_match.group(1)
-
-    embed_page_content = run_command(f"curl -L -A '{USER_AGENT}' '{embed_link}'")
-    if not embed_page_content: return None, None, None
-
-    fid_match = re.search(r'fid="([^"]+)"', embed_page_content)
-    v_con_match = re.search(r'v_con="([^"]+)"', embed_page_content)
-    v_dt_match = re.search(r'v_dt="([^"]+)"', embed_page_content)
-    
-    if not (fid_match and v_con_match and v_dt_match):
-        logging.warning(f"Could not find required variables in {embed_link}")
-        return None, None, None
-        
-    fid = fid_match.group(1)
-    v_con = v_con_match.group(1)
-    v_dt = v_dt_match.group(1)
-
-    atplay_url = f"https://player0003.com/atplay.php?v={fid}&hello={v_con}&expires={v_dt}"
-    
-    atplay_page_content = run_command(f"curl -L -A '{USER_AGENT}' -H 'Referer: https://cdn.dadocric.st/' '{atplay_url}'")
-    if not atplay_page_content: return None, None, None
-
-    stream_url_match = re.search(r'return\(\[(.*?)\]\.join', atplay_page_content, re.DOTALL)
-    if not stream_url_match:
-        logging.warning(f"Could not find stream URL array in {atplay_url}")
-        return None, None, None
-
-    char_array_str = stream_url_match.group(1)
-    char_list = re.findall(r'"(.*?)"', char_array_str)
-    stream_url = "".join(char_list).replace('\\/', '/')
-
-    if not stream_url:
-        return None, None, None
-
-    channel_name_match = re.search(r'<title>(.*?)</title>', channel_page_content)
-    raw_name = channel_name_match.group(1).split("|")[0].strip() if channel_name_match else "Unknown Channel"
-
-    return raw_name, stream_url, "https://player0003.com/"
-
-
-# --- Main Execution ---
 
 if __name__ == "__main__":
-    all_channels = []
-    
-    links_go = get_channel_links_go()
-    for link in links_go:
-        result = get_stream_link_go(link)
-        if result and all(result):
-            all_channels.append(result)
+    logging.info("--- STARTING WILLOW CRICKET STREAM EXTRACTOR (Cloudscraper) ---")
+    stream_url = extract_willow_stream()
 
-    links_crichd = get_channel_links_crichd()
-    for link in links_crichd:
-        result = get_stream_link_crichd(link)
-        if result and all(result):
-            all_channels.append(result)
-
-    total_channels = len(all_channels)
-    update_time = ""
-    if ZoneInfo:
+    if stream_url:
+        logging.info("--- EXTRACTION SUCCESSFUL ---")
+        print(f"\nFinal Stream URL:\n{stream_url}\n")
+        # Let's create the M3U file as requested previously
         try:
-            dhaka_tz = ZoneInfo('Asia/Dhaka')
-            update_time = datetime.datetime.now(dhaka_tz).strftime('%Y-%m-%d %I:%M:%S %p')
-        except Exception:
-            update_time = datetime.datetime.now().strftime('%Y-%m-%d %I:%M:%S %p') + " UTC"
-    else: # Fallback for older python
-        update_time = datetime.datetime.now().strftime('%Y-%m-%d %I:%M:%S %p') + " UTC"
+            with open("playlist.m3u", "w") as f:
+                f.write("#EXTM3U\n")
+                f.write("#EXTINF:-1,WILLOW HD\n")
+                f.write(stream_url + "\n")
+            logging.info("--- Successfully created playlist.m3u file ---")
+        except IOError as e:
+            logging.error(f"Failed to write M3U file: {e}")
 
-    with open(OUTPUT_M3U_FILE, "w", encoding='utf-8') as f:
-        f.write(f'#EXTM3U x-tvg-url="{EPG_URL}"\n')
-        f.write(f'# Made by Siam3310\n')
-        f.write(f'# Last updated: {update_time} (Bangladesh/Dhaka)\n')
-        f.write(f'# Total channels: {total_channels}\n\n')
-        for name, stream, referrer in sorted(all_channels, key=lambda x: x[0]):
-            f.write(f'#EXTINF:-1 tvg-name="{name}" group-title="All Channels",{name}\n')
-            f.write(f"#EXTVLCOPT:http-referrer={referrer}\n")
-            f.write(f"#EXTVLCOPT:http-origin=https://profamouslife.com\n")
-            f.write(f"{stream}\n")
-    
-    logging.info(f"Scraping complete. Found {total_channels} channels.")
+    else:
+        logging.error("--- EXTRACTION FAILED ---")
+        sys.exit(1)
