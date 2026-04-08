@@ -33,24 +33,6 @@
         ]
     },
     {
-        "title": "Barcelona vs Atletico Madrid",
-        "competition": "UEFA Champions League",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/barcelona-vs-atletico-madrid-live-streaming",
-        "channels": [
-            "TNT Sports 2"
-        ]
-    },
-    {
-        "title": "PSG vs Liverpool",
-        "competition": "UEFA Champions League",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/psg-vs-liverpool-live-streaming",
-        "channels": [
-            "TNT Sports 1"
-        ]
-    },
-    {
         "title": "Milwaukee Bucks vs Detroit Pistons",
         "competition": "NBA",
         "status": "Upcoming",
