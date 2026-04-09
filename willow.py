@@ -32,7 +32,6 @@ scraper.headers.update({'User-Agent': USER_AGENT})
 
 # --- FID to Channel Name Mapping ---
 fid_to_channel = {
-    "star1in": "STAR SPORTS 1", "starhindi": "Star Sports 1 Hindi",
     "willowusa": "WILLOW HD", "willowextra": "WILLOW EXTRA", "skysme": "SKY SPORTS MAIN EVENT",
     "skyscricket": "SKY SPORTS CRICKET", "skysact": "SKY SPORTS ACTION", "skysfott": "SKY SPORTS FOOTBALL",
     "skysfor1": "SKY SPORTS F1", "skysare": "SKY SPORTS ARENA", "skysmixx": "SKY SPORTS MIX",
@@ -40,8 +39,7 @@ fid_to_channel = {
     "skystennis": "SKY SPORTS TENNIS", "bbtsp1": "TNT SPORTS 1", "bbtsp2": "TNT SPORTS 2",
     "bbtsp3": "TNT SPORTS 3", "bbtespn": "TNT SPORTS 4", "ptvpk": "PTV SPORTS", "asportshd": "A SPORTS HD",
     "sonysixind": "SONY SIX", "ten1hd": "SONY TEN 1", "sonyespnind": "SONY TEN 3", "tenspk": "TEN SPORTS",
-    "star2in": "STAR SPORTS 2", "geosp": "GEO SUPER", "wwe": "WWE NETWORK",
-   
+    "star1in": "STAR SPORTS 1 HINDI", "star2in": "STAR SPORTS 2", "geosp": "GEO SUPER", "wwe": "WWE NETWORK",
     "premieruk": "PREMIER SPORTS 1", "laligauk": "LALIGA TV", "eurosp1": "EUROSPORT 1", "eurosp2": "EUROSPORT 2",
     "espnusa": "ESPN", "espn2": "ESPN 2", "supercricket": "SUPERSPORT CRICKET", "fox501": "FOX CRICKET",
     "hdchnl6": "SUPERSPORT VARIETY 1", "hdchnl7": "SUPERSPORT VARIETY 2", "hdchnl8": "SUPERSPORT VARIETY 3",
@@ -167,6 +165,7 @@ if __name__ == "__main__":
             f.write(header)
             for name, stream_url in sorted(all_streams, key=lambda x: x[0]):
                 f.write(f'#EXTINF:-1,{name}\n')
+            
                 f.write(f"{stream_url}\n")
         logging.info("M3U file written successfully.")
     except Exception as e:
