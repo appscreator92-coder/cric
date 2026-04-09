@@ -26,8 +26,8 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Run willow_scraper.py
-      run: python willow_scraper.py
+    - name: Run willow.py
+      run: python willow.py
 
     - name: Commit and push if there are changes
       run: |
