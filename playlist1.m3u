@@ -1,45 +1,45 @@
 #EXTM3U
 #CREDIT: Siam3310
-#LAST UPDATED: 2026-04-09 11:14:37 +06
+#LAST UPDATED: 2026-04-09 12:57:03 +06
 #TOTAL CHANNELS: 20
 
 #EXTINF:-1,ESPN 2
-https://n6.zohanayaan.com:1686/hls/espn2.m3u8?md5=Ua_A3I9E8w4TawTBKi_3Eg&expires=1775716473
+https://n7.zohanayaan.com:1686/hls/espn2.m3u8?md5=Za5J_hjZVBfQWtkdrKf2Fw&expires=1775722618
 #EXTINF:-1,PREMIER SPORTS 1
-https://n7.zohanayaan.com:1686/hls/premieruk.m3u8?md5=807GNs1LknxwV_AZ0FX7pQ&expires=1775716477
+https://n8.zohanayaan.com:1686/hls/premieruk.m3u8?md5=FnqXJ3tkwquas4h6L9QF2w&expires=1775722622
 #EXTINF:-1,PTV SPORTS
-https://n6.zohanayaan.com:1686/hls/ptvpk.m3u8?md5=BgsDZZ8xQZSz8KTYhphyVg&expires=1775716474
+https://n8.zohanayaan.com:1686/hls/ptvpk.m3u8?md5=XytMmBh24ZeLym3lKJnJOA&expires=1775722620
 #EXTINF:-1,SKY SPORTS ACTION
-https://n8.zohanayaan.com:1686/hls/skysact.m3u8?md5=JKOwXrFXUSuwzg9mpn2sbQ&expires=1775716474
+https://n7.zohanayaan.com:1686/hls/skysact.m3u8?md5=wU32vzdKGsoGVuo4sLAJZw&expires=1775722620
 #EXTINF:-1,SKY SPORTS ARENA
-https://n8.zohanayaan.com:1686/hls/skysare.m3u8?md5=T8BHKghiWV8UJs3ht0Zm6A&expires=1775716475
+https://n7.zohanayaan.com:1686/hls/skysare.m3u8?md5=_DC-_YmQ3uFdzG-RexRaZQ&expires=1775722620
 #EXTINF:-1,SKY SPORTS F1
-https://n6.zohanayaan.com:1686/hls/skysfor1.m3u8?md5=kFjGNVtqQ4fdN3SdIC6bmA&expires=1775716475
+https://n8.zohanayaan.com:1686/hls/skysfor1.m3u8?md5=2283qiKjIInjQJ16UhQGnw&expires=1775722620
 #EXTINF:-1,SKY SPORTS FOOTBALL
-https://n7.zohanayaan.com:1686/hls/skysfott.m3u8?md5=OfvIbGCxaNVmXj4JZkon7g&expires=1775716475
+https://n7.zohanayaan.com:1686/hls/skysfott.m3u8?md5=EW6-pOwTZZdyGuVzaY8WKA&expires=1775722620
 #EXTINF:-1,SKY SPORTS GOLF
-https://n8.zohanayaan.com:1686/hls/skysgol.m3u8?md5=Jx-ISN7cpNT3bJJIDjYv9A&expires=1775716475
+https://n8.zohanayaan.com:1686/hls/skysgol.m3u8?md5=HJpREUtripw9Fw02oWeizA&expires=1775722620
 #EXTINF:-1,SKY SPORTS MAIN EVENT
-https://n8.zohanayaan.com:1686/hls/skysme.m3u8?md5=TtF2DXpUzI-Kou4oOr2xrA&expires=1775716475
+https://n6.zohanayaan.com:1686/hls/skysme.m3u8?md5=9gLU7mptoog8ejYryiY6pw&expires=1775722620
 #EXTINF:-1,SKY SPORTS MIX
-https://n8.zohanayaan.com:1686/hls/skysmixx.m3u8?md5=VVtMW-X7e6xnI2WdiJHJFA&expires=1775716475
+https://n7.zohanayaan.com:1686/hls/skysmixx.m3u8?md5=G_kSFd8Fp7RYqTdTT-7e1A&expires=1775722621
 #EXTINF:-1,SKY SPORTS NEWS
-https://n8.zohanayaan.com:1686/hls/skyspnews.m3u8?md5=s-tp3jczfuEMDKkb_kJEXw&expires=1775716475
+https://n7.zohanayaan.com:1686/hls/skyspnews.m3u8?md5=hlmPzmo7h-rpGFHFw_JDGA&expires=1775722621
 #EXTINF:-1,SKY SPORTS PREMIER LEAGUE
-https://n6.zohanayaan.com:1686/hls/skysprem.m3u8?md5=EevBt-s6wR0rc3PBppeVeQ&expires=1775716475
+https://n6.zohanayaan.com:1686/hls/skysprem.m3u8?md5=7phbZ0_7eYLGcLwKhpOvcA&expires=1775722621
 #EXTINF:-1,SKY SPORTS TENNIS
-https://n7.zohanayaan.com:1686/hls/skystennis.m3u8?md5=7nXNaBofnwYTih3OUZEhVw&expires=1775716475
+https://n6.zohanayaan.com:1686/hls/skystennis.m3u8?md5=j6fQ9oO0tcwzDQ1x2-M25A&expires=1775722621
 #EXTINF:-1,STAR SPORTS 1
-https://n7.zohanayaan.com:1686/hls/star1in.m3u8?md5=aksHGout-KjRqTwEMtpIPw&expires=1775716476
+https://n6.zohanayaan.com:1686/hls/star1in.m3u8?md5=oAqu0haVqLCpgZpHkusMvQ&expires=1775722621
 #EXTINF:-1,TEN SPORTS
-https://n8.zohanayaan.com:1686/hls/tenspk.m3u8?md5=5f7p8eqKin5OV0jhQiEeYg&expires=1775716476
+https://n6.zohanayaan.com:1686/hls/tenspk.m3u8?md5=WuBxsDDeobq27CH1z9LMMw&expires=1775722622
 #EXTINF:-1,TNT SPORTS 1
-https://n8.zohanayaan.com:1686/hls/bbtsp1.m3u8?md5=P8vmmwwx-aEWTGefWuPgCg&expires=1775716476
+https://n8.zohanayaan.com:1686/hls/bbtsp1.m3u8?md5=N9xp11Uljy1tTN36i6LhCQ&expires=1775722622
 #EXTINF:-1,TNT SPORTS 2
-https://n7.zohanayaan.com:1686/hls/bbtsp2.m3u8?md5=SXKCVbAuLFcWj9O1Zmekug&expires=1775716476
+https://n6.zohanayaan.com:1686/hls/bbtsp2.m3u8?md5=g59btCCVeeCtPVGzAQTFWw&expires=1775722622
 #EXTINF:-1,TNT SPORTS 4
-https://n8.zohanayaan.com:1686/hls/bbtespn.m3u8?md5=uN3WUyWovc9zTpLCnus7Mg&expires=1775716476
+https://n8.zohanayaan.com:1686/hls/bbtespn.m3u8?md5=OQGsDy2b9HNYK0M_rwMZ4Q&expires=1775722622
 #EXTINF:-1,WILLOW EXTRA
-https://n6.zohanayaan.com:1686/hls/willowextra.m3u8?md5=6y0_XMfKu9ctYuxbzDyuJg&expires=1775716477
+https://n8.zohanayaan.com:1686/hls/willowextra.m3u8?md5=RwO-VNbvv9H1q3IgoVoRAw&expires=1775722622
 #EXTINF:-1,WILLOW HD
-https://n8.zohanayaan.com:1686/hls/willowusa.m3u8?md5=fpxYG0OjhOUbogBBkV5zQw&expires=1775716477
+https://n7.zohanayaan.com:1686/hls/willowusa.m3u8?md5=HjoBGPt9gPldkjhYat-cuQ&expires=1775722622
