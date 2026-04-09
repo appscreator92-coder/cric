@@ -33,18 +33,9 @@
         ]
     },
     {
-        "title": "Kolkata Knight Riders vs Lucknow Super Giants",
-        "competition": "IPL T20",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/kolkata-knight-riders-vs-lucknow-super-giants-live-streaming",
-        "channels": [
-            "Sky Sports  Cricket"
-        ]
-    },
-    {
         "title": "Rayo Vallecano vs AEK Athens",
         "competition": "UEFA Europa Conference League",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/rayo-vallecano-vs-aek-athens-live-streaming",
         "channels": [
             "TNT Sports 4"
