@@ -33,193 +33,137 @@
         ]
     },
     {
-        "title": "ATP 1000: Monte Carlo",
-        "competition": "ATP Tour",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/atp-1000-monte-carlo-live-streaming",
-        "channels": [
-            "Sky Sports Tennis"
-        ]
-    },
-    {
-        "title": "Brisbane Broncos vs North Queensland",
-        "competition": "",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/brisbane-broncos-vs-north-queensland-live-streaming",
-        "channels": [
-            "Sky Sports  Action"
-        ]
-    },
-    {
         "title": "Rajasthan Royals vs RCB",
         "competition": "IPL T20",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/rajasthan-royals-vs-rcb-live-streaming",
-        "channels": [
-            "Sky Sports  Cricket"
-        ]
+        "channels": []
     },
     {
         "title": "London Pulse vs London Mavericks",
         "competition": "NBA",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/london-pulse-vs-london-mavericks-live-streaming",
-        "channels": [
-            "Sky Sports Mix"
-        ]
+        "channels": []
     },
     {
         "title": "Colchester United vs Swindon Town",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/colchester-united-vs-swindon-town-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "West Bromwich Albion vs Millwall",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/west-bromwich-albion-vs-millwall-live-streaming",
-        "channels": [
-            "Sky Sports Football"
-        ]
+        "channels": []
     },
     {
         "title": "West Ham United vs Wolverhampton Wanderers",
         "competition": "English Premier League",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/west-ham-united-vs-wolverhampton-wanderers-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "Moana Pasifika vs Chiefs",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/moana-pasifika-vs-chiefs-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "Fijian Drua vs Western Force",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/fijian-drua-vs-western-force-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "Hurricanes vs Blues",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/hurricanes-vs-blues-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "Reds vs Crusaders",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/reds-vs-crusaders-live-streaming",
-        "channels": [
-            "Sky Sports Mix"
-        ]
+        "channels": []
     },
     {
         "title": "Punjab Kings vs Sunrisers Hyderabad",
         "competition": "IPL T20",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/punjab-kings-vs-sunrisers-hyderabad-live-streaming",
-        "channels": [
-            "Sky Sports  Cricket"
-        ]
+        "channels": []
     },
     {
         "title": "Bristol Rovers vs Crawley Town",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/bristol-rovers-vs-crawley-town-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "Cardiff City vs Bolton Wanderers",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/cardiff-city-vs-bolton-wanderers-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "Coventry City vs Sheffield Wednesday",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/coventry-city-vs-sheffield-wednesday-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "Lincoln City vs Leyton Orient",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/lincoln-city-vs-leyton-orient-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "Milton Keynes Dons vs Bromley",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/milton-keynes-dons-vs-bromley-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "Norwich City vs Ipswich Town",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/norwich-city-vs-ipswich-town-live-streaming",
-        "channels": [
-            "Sky Sports Football"
-        ]
+        "channels": []
     },
     {
         "title": "Queens Park Rangers vs Bristol City",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/queens-park-rangers-vs-bristol-city-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "Plymouth Argyle vs Exeter City",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/plymouth-argyle-vs-exeter-city-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
+        "channels": []
     },
     {
         "title": "Chennai Super Kings vs Delhi Capitals",
         "competition": "IPL T20",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/chennai-super-kings-vs-delhi-capitals-live-streaming",
-        "channels": [
-            "Sky Sports  Cricket"
-        ]
+        "channels": []
     },
     {
         "title": "Liverpool vs Fulham",
