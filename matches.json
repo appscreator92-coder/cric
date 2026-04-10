@@ -42,6 +42,15 @@
         ]
     },
     {
+        "title": "ATP 1000: Monte Carlo",
+        "competition": "ATP Tour",
+        "status": "Upcoming",
+        "match_url": "https://vf.crichd.tv/atp-1000-monte-carlo-live-streaming",
+        "channels": [
+            "Sky Sports Tennis"
+        ]
+    },
+    {
         "title": "Brisbane Broncos vs North Queensland",
         "competition": "",
         "status": "Upcoming",
@@ -327,6 +336,15 @@
         "match_url": "https://vf.crichd.tv/waratahs-vs-moana-pasifika-live-streaming",
         "channels": [
             "Sky Sports Main Event"
+        ]
+    },
+    {
+        "title": "Gujarat Titans vs Kolkata Knight Riders",
+        "competition": "IPL T20",
+        "status": "Upcoming",
+        "match_url": "https://vf.crichd.tv/gujarat-titans-vs-kolkata-knight-riders-live-streaming",
+        "channels": [
+            "Sky Sports  Cricket"
         ]
     },
     {
