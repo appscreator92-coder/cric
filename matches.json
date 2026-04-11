@@ -33,15 +33,6 @@
         ]
     },
     {
-        "title": "Real Sociedad vs Deportivo Alaves",
-        "competition": "Super Lig",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/real-sociedad-vs-deportivo-alaves-live-streaming",
-        "channels": [
-            "LaLiga Tv"
-        ]
-    },
-    {
         "title": "Chennai Super Kings vs Delhi Capitals",
         "competition": "IPL T20",
         "status": "Live",
@@ -53,7 +44,7 @@
     {
         "title": "ATP 1000: Monte Carlo",
         "competition": "ATP Tour",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/atp-1000-monte-carlo-live-streaming",
         "channels": [
             "Sky Sports Main Event"
@@ -62,7 +53,7 @@
     {
         "title": "Elche vs Valencia",
         "competition": "Super Lig",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/elche-vs-valencia-live-streaming",
         "channels": [
             "LaLiga Tv"
