@@ -289,27 +289,35 @@
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/hurricanes-vs-brumbies-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Blues vs Reds",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/blues-vs-reds-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Highlanders vs Moana Pasifika",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/highlanders-vs-moana-pasifika-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Chiefs vs Fijian Drua",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/chiefs-vs-fijian-drua-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     }
 ]
