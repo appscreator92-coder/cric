@@ -14,49 +14,68 @@
         "competition": "PSLT20",
         "status": "Live",
         "match_url": "https://vf.crichd.tv/psl-t20-2026-live-streaming",
-        "channels": []
+        "channels": [
+            "PTV Sports",
+            "Willow Cricket 2",
+            "A Sports HD"
+        ]
     },
     {
         "title": "IPL T20 2026",
         "competition": "IPL T20",
         "status": "Live",
         "match_url": "https://vf.crichd.tv/ipl-t20-2026-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports  Cricket",
+            "Star Sports",
+            "Star Sports 1 Hindi",
+            "Willow Cricket"
+        ]
     },
     {
         "title": "Sunrisers Hyderabad vs Rajasthan Royals",
         "competition": "IPL T20",
         "status": "Live",
         "match_url": "https://vf.crichd.tv/sunrisers-hyderabad-vs-rajasthan-royals-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports  Cricket"
+        ]
     },
     {
         "title": "Manchester United vs Leeds United",
         "competition": "English Premier League",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/manchester-united-vs-leeds-united-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Chennai Super Kings vs Kolkata Knight Riders",
         "competition": "IPL T20",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/chennai-super-kings-vs-kolkata-knight-riders-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports  Cricket"
+        ]
     },
     {
         "title": "Barrow vs Oldham Athletic",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/barrow-vs-oldham-athletic-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Bolton Wanderers vs Stevenage",
         "competition": "English Championship",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/bolton-wanderers-vs-stevenage-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Cheltenham Town vs Gillingham",
