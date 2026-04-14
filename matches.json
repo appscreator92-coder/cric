@@ -98,7 +98,7 @@
     {
         "title": "Portsmouth vs Ipswich Town",
         "competition": "English Championship",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/portsmouth-vs-ipswich-town-live-streaming",
         "channels": [
             "Sky Sports Main Event"
@@ -107,7 +107,7 @@
     {
         "title": "Southampton vs Blackburn Rovers",
         "competition": "English Championship",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/southampton-vs-blackburn-rovers-live-streaming",
         "channels": [
             "Sky Sports Football"
@@ -116,7 +116,7 @@
     {
         "title": "Atletico Madrid vs Barcelona",
         "competition": "UEFA Champions League",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/atletico-madrid-vs-barcelona-live-streaming",
         "channels": [
             "TNT Sports 1"
