@@ -1,39 +1,31 @@
 #EXTM3U
 #CREDIT: Siam3310
-#LAST UPDATED: 2026-04-15 00:47:14 +06
-#TOTAL CHANNELS: 17
+#LAST UPDATED: 2026-04-15 02:08:50 +06
+#TOTAL CHANNELS: 13
 
 #EXTINF:-1,A SPORTS HD
-https://n4.zohanayaan.com:1686/hls/asportshd.m3u8?md5=1Tk9HvdI-80-pO_KSL0qpw&expires=1776197105
+https://n2.zohanayaan.com:1686/hls/asportshd.m3u8?md5=KRE4GaGOxfeE9JzkzPsqCQ&expires=1776202060
 #EXTINF:-1,ESPN 2
-https://n3.zohanayaan.com:1686/hls/espn2.m3u8?md5=dlblYHi0kLRAhus3Ep1PSg&expires=1776197138
-#EXTINF:-1,PREMIER SPORTS 1
-https://n2.zohanayaan.com:1686/hls/premieruk.m3u8?md5=OsRmLOmOEdDPFmjEZSR2Lg&expires=1776197203
-#EXTINF:-1,PTV SPORTS
-https://n4.zohanayaan.com:1686/hls/ptvpk.m3u8?md5=XVZwFzuxgXUF_Y-PIS547Q&expires=1776197170
-#EXTINF:-1,SKY SPORTS ACTION
-https://n4.zohanayaan.com:1686/hls/skysact.m3u8?md5=mvTBNGBw97GcuTg1Y2Ia-Q&expires=1776197170
+https://n2.zohanayaan.com:1686/hls/espn2.m3u8?md5=nTnJo4OOscsrfgXyTI4nhQ&expires=1776202094
 #EXTINF:-1,SKY SPORTS ARENA
-https://n4.zohanayaan.com:1686/hls/skysare.m3u8?md5=QA2hHOD9-yuHeYcmLtgCqg&expires=1776197171
+https://n2.zohanayaan.com:1686/hls/skysare.m3u8?md5=1OD1iyCKAJWF9ealQRdc2A&expires=1776202118
 #EXTINF:-1,SKY SPORTS F1
-https://n3.zohanayaan.com:1686/hls/skysfor1.m3u8?md5=5rEHnvUwmE3lX4v2ha30fw&expires=1776197171
+https://n4.zohanayaan.com:1686/hls/skysfor1.m3u8?md5=nEs6eXC68ok0hKtfRWHLcA&expires=1776202119
 #EXTINF:-1,SKY SPORTS FOOTBALL
-https://n3.zohanayaan.com:1686/hls/skysfott.m3u8?md5=vePQcLRdfL40R6z7EzveVg&expires=1776197171
-#EXTINF:-1,SKY SPORTS GOLF
-https://n3.zohanayaan.com:1686/hls/skysgol.m3u8?md5=QPEfHAPfIZjhYyV7RenzWw&expires=1776197171
+https://n2.zohanayaan.com:1686/hls/skysfott.m3u8?md5=vQrE_tTpRkss1Wd6rTPqgA&expires=1776202119
 #EXTINF:-1,SKY SPORTS MAIN EVENT
-https://n2.zohanayaan.com:1686/hls/skysme.m3u8?md5=wW4WYTwwQMvQbgBmIptSPg&expires=1776197171
+https://n2.zohanayaan.com:1686/hls/skysme.m3u8?md5=ir15yeZB3TWZc75DsAwEUQ&expires=1776202120
 #EXTINF:-1,SKY SPORTS MIX
-https://n2.zohanayaan.com:1686/hls/skysmixx.m3u8?md5=EBDjaBe6RmbSRGjVm1ZEzw&expires=1776197172
-#EXTINF:-1,SKY SPORTS NEWS
-https://n3.zohanayaan.com:1686/hls/skyspnews.m3u8?md5=E3Zdiy-Pf2kkxdjEQR7t5A&expires=1776197172
+https://n2.zohanayaan.com:1686/hls/skysmixx.m3u8?md5=BN3eddGSxYi7h4aXnI8pKQ&expires=1776202120
 #EXTINF:-1,SKY SPORTS PREMIER LEAGUE
-https://n3.zohanayaan.com:1686/hls/skysprem.m3u8?md5=hE5ynPNnqcSSIDWVjmtpRg&expires=1776197172
-#EXTINF:-1,TEN SPORTS
-https://n2.zohanayaan.com:1686/hls/tenspk.m3u8?md5=wAh3cDNFZ2kM3eY_Y_Y2XA&expires=1776197188
+https://n4.zohanayaan.com:1686/hls/skysprem.m3u8?md5=PTJdwnn2y3gPGvUxJAwdcQ&expires=1776202121
+#EXTINF:-1,SKY SPORTS TENNIS
+https://n2.zohanayaan.com:1686/hls/skystennis.m3u8?md5=432cnZJUoY7JCOM8g8g2mg&expires=1776202122
+#EXTINF:-1,STAR SPORTS 1 HINDI
+https://n4.zohanayaan.com:1686/hls/star1in.m3u8?md5=3hMp0iQ0KsYEz1otqToxyQ&expires=1776202123
 #EXTINF:-1,TNT SPORTS 1
-https://n3.zohanayaan.com:1686/hls/bbtsp1.m3u8?md5=ONMsbPoNr5l9L7h0g82-Lw&expires=1776197188
+https://n4.zohanayaan.com:1686/hls/bbtsp1.m3u8?md5=6MruiQMo03rrnr1mcVg6Ww&expires=1776202126
 #EXTINF:-1,TNT SPORTS 2
-https://n4.zohanayaan.com:1686/hls/bbtsp2.m3u8?md5=c9upLyQc8kQj3oUTdnYtqA&expires=1776197188
-#EXTINF:-1,WILLOW EXTRA
-https://n3.zohanayaan.com:1686/hls/willowextra.m3u8?md5=xTaXbWT2D5S-HfVQLC593Q&expires=1776197204
+https://n2.zohanayaan.com:1686/hls/bbtsp2.m3u8?md5=JtOQUnpxCJD3w9kVqRbB3Q&expires=1776202126
+#EXTINF:-1,TNT SPORTS 4
+https://n4.zohanayaan.com:1686/hls/bbtespn.m3u8?md5=0arZ-Xl5XV5JuVN-hd4DIQ&expires=1776202127
