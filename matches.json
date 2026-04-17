@@ -33,18 +33,9 @@
         ]
     },
     {
-        "title": "Blues vs Highlanders",
-        "competition": "",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/blues-vs-highlanders-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
-    },
-    {
         "title": "Canberra Raiders vs Melbourne Storm",
         "competition": "",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/canberra-raiders-vs-melbourne-storm-live-streaming",
         "channels": [
             "Sky Sports  Action"
@@ -53,7 +44,7 @@
     {
         "title": "ATP / WTA: Barcelona / Munich / Rouen / Stuttgart",
         "competition": "ATP Tour",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/atp-wta-barcelona-munich-rouen-stuttgart-live-streaming",
         "channels": [
             "Sky Sports Tennis"
