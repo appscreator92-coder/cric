@@ -23,24 +23,6 @@
         ]
     },
     {
-        "title": "Sunrisers Hyderabad vs Chennai Super Kings",
-        "competition": "IPL T20",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/sunrisers-hyderabad-vs-chennai-super-kings-live-streaming",
-        "channels": [
-            "Sky Sports  Cricket"
-        ]
-    },
-    {
-        "title": "Manchester Thunder vs LexisNexis Dragons",
-        "competition": "NBA",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/manchester-thunder-vs-lexisnexis-dragons-live-streaming",
-        "channels": [
-            "Sky Sports Main Event"
-        ]
-    },
-    {
         "title": "Napoli vs Lazio",
         "competition": "Italian Serie A",
         "status": "Live",
@@ -70,7 +52,7 @@
     {
         "title": "Catalans Dragons vs Warrington Wolves",
         "competition": "",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/catalans-dragons-vs-warrington-wolves-live-streaming",
         "channels": [
             "Sky Sports Main Event"
