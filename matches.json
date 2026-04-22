@@ -23,18 +23,9 @@
         ]
     },
     {
-        "title": "Portland Trail Blazers vs San Antonio Spurs",
-        "competition": "NBA",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/portland-trail-blazers-vs-san-antonio-spurs-live-streaming",
-        "channels": [
-            "Sky Sports  Action"
-        ]
-    },
-    {
         "title": "Houston Rockets vs LA Lakers",
         "competition": "NBA",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/houston-rockets-vs-la-lakers-live-streaming",
         "channels": [
             "Sky Sports  Action"
