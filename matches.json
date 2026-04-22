@@ -25,10 +25,28 @@
     {
         "title": "Lucknow Super Giants vs Rajasthan Royals",
         "competition": "IPL T20",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/lucknow-super-giants-vs-rajasthan-royals-live-streaming",
         "channels": [
             "Sky Sports  Cricket"
+        ]
+    },
+    {
+        "title": "Elche vs Atletico Madrid",
+        "competition": "Spanish La Liga",
+        "status": "Upcoming",
+        "match_url": "https://vf.crichd.tv/elche-vs-atletico-madrid-live-streaming",
+        "channels": [
+            "Viaplay Sports 1"
+        ]
+    },
+    {
+        "title": "Real Sociedad vs Getafe",
+        "competition": "Spanish La Liga",
+        "status": "Upcoming",
+        "match_url": "https://vf.crichd.tv/real-sociedad-vs-getafe-live-streaming",
+        "channels": [
+            "LaLiga Tv"
         ]
     },
     {
@@ -77,6 +95,15 @@
         ]
     },
     {
+        "title": "Bayer Leverkusen vs Bayern Munich",
+        "competition": "Bundesliga",
+        "status": "Upcoming",
+        "match_url": "https://vf.crichd.tv/bayer-leverkusen-vs-bayern-munich-live-streaming",
+        "channels": [
+            "Viaplay Sports 2 (CH2)"
+        ]
+    },
+    {
         "title": "Bournemouth vs Leeds United",
         "competition": "English Premier League",
         "status": "Upcoming",
@@ -92,6 +119,15 @@
         "match_url": "https://vf.crichd.tv/burnley-vs-manchester-city-live-streaming",
         "channels": [
             "Sky Sports Main Event"
+        ]
+    },
+    {
+        "title": "Barcelona vs Celta Vigo",
+        "competition": "Spanish La Liga",
+        "status": "Upcoming",
+        "match_url": "https://vf.crichd.tv/barcelona-vs-celta-vigo-live-streaming",
+        "channels": [
+            "Viaplay Sports 1"
         ]
     },
     {
