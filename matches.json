@@ -23,18 +23,9 @@
         ]
     },
     {
-        "title": "Mumbai Indians vs Chennai Super Kings",
-        "competition": "IPL T20",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/mumbai-indians-vs-chennai-super-kings-live-streaming",
-        "channels": [
-            "Sky Sports  Cricket"
-        ]
-    },
-    {
         "title": "Levante vs Sevilla",
         "competition": "Spanish La Liga",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/levante-vs-sevilla-live-streaming",
         "channels": [
             "Viaplay Sports 1"
