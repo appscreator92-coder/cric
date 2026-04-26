@@ -32,15 +32,6 @@
         ]
     },
     {
-        "title": "Liverpool Women vs West Ham United Women",
-        "competition": "English Premier League",
-        "status": "Live",
-        "match_url": "https://vf.crichd.tv/liverpool-women-vs-west-ham-united-women-live-streaming",
-        "channels": [
-            "Sky Sports Football"
-        ]
-    },
-    {
         "title": "Lucknow Super Giants vs Kolkata Knight Riders",
         "competition": "IPL T20",
         "status": "Live",
@@ -70,7 +61,7 @@
     {
         "title": "LexisNexis Dragons vs Loughborough Lightning",
         "competition": "",
-        "status": "Upcoming",
+        "status": "Live",
         "match_url": "https://vf.crichd.tv/lexisnexis-dragons-vs-loughborough-lightning-live-streaming",
         "channels": [
             "Sky Sports Main Event"
