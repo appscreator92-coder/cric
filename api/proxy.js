@@ -1,5 +1,5 @@
 // The URL of your raw M3U playlist on GitHub.
-const M3U_URL = 'https://raw.githubusercontent.com/konanda-sg/crichd-speical-live-event/refs/heads/main/playlist.m3u';
+const M3U_URL = 'https://raw.githubusercontent.com/srhady/crichd-speical-live-event/refs/heads/main/playlist.m3u';
 
 module.exports = async (req, res) => {
     // 1. Added 'origin' to the query parameters
