@@ -135,98 +135,126 @@
         "competition": "IPL T20",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/sunrisers-hyderabad-vs-punjab-kings-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Lucknow Super Giants vs RCB",
         "competition": "IPL T20",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/lucknow-super-giants-vs-rcb-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports  Cricket"
+        ]
     },
     {
         "title": "Crusaders vs Blues",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/crusaders-vs-blues-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Reds vs Chiefs",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/reds-vs-chiefs-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Delhi Capitals vs Kolkata Knight Riders",
         "competition": "IPL T20",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/delhi-capitals-vs-kolkata-knight-riders-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports  Cricket"
+        ]
     },
     {
         "title": "Highlanders vs Waratahs",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/highlanders-vs-waratahs-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Moana Pasifika vs Hurricanes",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/moana-pasifika-vs-hurricanes-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Brumbies vs Western Force",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/brumbies-vs-western-force-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Rajasthan Royals vs Gujarat Titans",
         "competition": "IPL T20",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/rajasthan-royals-vs-gujarat-titans-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports  Cricket"
+        ]
     },
     {
         "title": "England Women vs New Zealand Women",
         "competition": "International Cricket",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/england-women-vs-new-zealand-women-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports  Cricket"
+        ]
     },
     {
         "title": "Chennai Super Kings vs Lucknow Super Giants",
         "competition": "IPL T20",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/chennai-super-kings-vs-lucknow-super-giants-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Mix"
+        ]
     },
     {
         "title": "RCB vs Mumbai Indians",
         "competition": "IPL T20",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/rcb-vs-mumbai-indians-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Mix"
+        ]
     },
     {
         "title": "Chiefs vs Highlanders",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/chiefs-vs-highlanders-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Fijian Drua vs Waratahs",
         "competition": "",
         "status": "Upcoming",
         "match_url": "https://vf.crichd.tv/fijian-drua-vs-waratahs-live-streaming",
-        "channels": []
+        "channels": [
+            "Sky Sports Main Event"
+        ]
     },
     {
         "title": "Blues vs Hurricanes",
