@@ -44,9 +44,13 @@ module.exports = async (req, res) => {
 
             const targetResponse = await fetch(url, { headers, redirect: 'follow' });
             
+            // Handle Cookie persistence
+            const setCookie = targetResponse.headers.get('set-cookie');
+            if (setCookie) res.setHeader('Set-Cookie', setCookie);
+
             res.setHeader('Access-Control-Allow-Origin', '*');
             targetResponse.headers.forEach((v, n) => {
-                if (!['content-encoding', 'transfer-encoding', 'cache-control'].includes(n.toLowerCase())) {
+                if (!['content-encoding', 'transfer-encoding', 'set-cookie', 'cache-control'].includes(n.toLowerCase())) {
                     res.setHeader(n, v);
                 }
             });
