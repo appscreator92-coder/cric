@@ -36,24 +36,26 @@ module.exports = async (req, res) => {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                 'Referer': referer || '',
                 'Origin': origin || '',
-                'Cookie': req.headers.cookie || ''
+                'Cookie': req.headers.cookie || '',
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
             };
 
             const targetResponse = await fetch(url, { headers, redirect: 'follow' });
             
-            // Set CORS headers
             res.setHeader('Access-Control-Allow-Origin', '*');
             targetResponse.headers.forEach((v, n) => {
-                if (!['content-encoding', 'transfer-encoding'].includes(n.toLowerCase())) res.setHeader(n, v);
+                if (!['content-encoding', 'transfer-encoding', 'cache-control'].includes(n.toLowerCase())) {
+                    res.setHeader(n, v);
+                }
             });
 
-            // If it's a playlist, rewrite internal links to force them through this proxy
             if (targetResponse.headers.get('content-type')?.includes('mpegurl')) {
                 const body = await targetResponse.text();
                 return res.status(200).send(rewritePlaylist(body, url, referer, origin, req));
             }
 
-            // Stream video segments
             res.status(targetResponse.status);
             for await (const chunk of targetResponse.body) {
                 res.write(chunk);
@@ -72,9 +74,9 @@ function rewritePlaylist(body, playlistUrl, referer, origin, req) {
 
     return body.split('\n').map(line => {
         line = line.trim();
-        // Skip comments and empty lines
-        if (!line || line.startsWith('#')) {
-            // Special case: check for URI in EXT-X-KEY or EXT-X-STREAM-INF
+        if (!line) return line;
+
+        if (line.startsWith('#')) {
             if (line.includes('URI="')) {
                 return line.replace(/URI="([^"]+)"/, (match, p1) => {
                     const absUri = new URL(p1, playlistBaseUrl).href;
@@ -88,7 +90,6 @@ function rewritePlaylist(body, playlistUrl, referer, origin, req) {
             return line;
         }
 
-        // Force all segment/sub-playlist URLs through proxy
         const absUrl = new URL(line, playlistBaseUrl).href;
         const pUrl = new URL(proxyBase);
         pUrl.searchParams.set('url', absUrl);
