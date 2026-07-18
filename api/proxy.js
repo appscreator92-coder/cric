@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
             let streamUrl = '', streamReferer = '', streamOrigin = '';
 
             for (let i = 0; i < lines.length; i++) {
-                if (lines[i].includes(channel)) {
+                if (lines[i].toLowerCase().includes(channel.toLowerCase())) {
                     for (let j = i + 1; j < i + 6; j++) {
                         if (!lines[j]) continue;
                         const line = lines[j].trim();
@@ -39,21 +39,22 @@ module.exports = async (req, res) => {
                 'Cookie': req.headers.cookie || ''
             };
 
-            // Using { redirect: 'follow' } to ensure headers persist through CDN redirects
             const targetResponse = await fetch(url, { headers, redirect: 'follow' });
-
+            
+            // Set CORS headers
             res.setHeader('Access-Control-Allow-Origin', '*');
             targetResponse.headers.forEach((v, n) => {
                 if (!['content-encoding', 'transfer-encoding'].includes(n.toLowerCase())) res.setHeader(n, v);
             });
 
+            // If it's a playlist, rewrite internal links to force them through this proxy
             if (targetResponse.headers.get('content-type')?.includes('mpegurl')) {
                 const body = await targetResponse.text();
                 return res.status(200).send(rewritePlaylist(body, url, referer, origin, req));
             }
 
+            // Stream video segments
             res.status(targetResponse.status);
-            // Stream the chunks directly to the client
             for await (const chunk of targetResponse.body) {
                 res.write(chunk);
             }
@@ -61,22 +62,39 @@ module.exports = async (req, res) => {
         }
         res.status(200).send('Proxy Active');
     } catch (e) {
-        res.status(500).send('Internal Server Error');
+        res.status(500).send('Internal Error');
     }
 };
 
 function rewritePlaylist(body, playlistUrl, referer, origin, req) {
-    const baseUrl = new URL(playlistUrl);
-    const proxyUrl = new URL(req.url, `https://${req.headers.host}`);
-    proxyUrl.search = '';
+    const playlistBaseUrl = new URL(playlistUrl);
+    const proxyBase = `https://${req.headers.host}${req.url.split('?')[0]}`;
 
     return body.split('\n').map(line => {
-        if (line.startsWith('#') || !line.trim()) return line;
-        const absUrl = new URL(line, baseUrl).href;
-        const pUrl = new URL(proxyUrl);
+        line = line.trim();
+        // Skip comments and empty lines
+        if (!line || line.startsWith('#')) {
+            // Special case: check for URI in EXT-X-KEY or EXT-X-STREAM-INF
+            if (line.includes('URI="')) {
+                return line.replace(/URI="([^"]+)"/, (match, p1) => {
+                    const absUri = new URL(p1, playlistBaseUrl).href;
+                    const pUrl = new URL(proxyBase);
+                    pUrl.searchParams.set('url', absUri);
+                    if (referer) pUrl.searchParams.set('referer', referer);
+                    if (origin) pUrl.searchParams.set('origin', origin);
+                    return `URI="${pUrl.toString()}"`;
+                });
+            }
+            return line;
+        }
+
+        // Force all segment/sub-playlist URLs through proxy
+        const absUrl = new URL(line, playlistBaseUrl).href;
+        const pUrl = new URL(proxyBase);
         pUrl.searchParams.set('url', absUrl);
         if (referer) pUrl.searchParams.set('referer', referer);
         if (origin) pUrl.searchParams.set('origin', origin);
+        
         return pUrl.toString();
     }).join('\n');
 }
