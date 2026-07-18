@@ -32,11 +32,18 @@ module.exports = async (req, res) => {
         }
 
         if (url) {
+            // Enhanced headers to mimic a real browser fingerprint
             const headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
                 'Referer': referer || '',
                 'Origin': origin || '',
                 'Cookie': req.headers.cookie || '',
+                'Accept': '*/*',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Sec-Fetch-Dest': 'empty',
+                'Sec-Fetch-Mode': 'cors',
+                'Sec-Fetch-Site': 'cross-site',
+                'Connection': 'keep-alive',
                 'Cache-Control': 'no-cache, no-store, must-revalidate',
                 'Pragma': 'no-cache',
                 'Expires': '0'
@@ -85,7 +92,7 @@ function rewritePlaylist(body, playlistUrl, referer, origin, req) {
                     const absUri = new URL(p1, playlistBaseUrl).href;
                     const pUrl = new URL(proxyBase);
                     pUrl.searchParams.set('url', absUri);
-                    pUrl.searchParams.set('_t', Date.now()); // Cache-buster
+                    pUrl.searchParams.set('_t', Date.now()); 
                     if (referer) pUrl.searchParams.set('referer', referer);
                     if (origin) pUrl.searchParams.set('origin', origin);
                     return `URI="${pUrl.toString()}"`;
@@ -97,7 +104,7 @@ function rewritePlaylist(body, playlistUrl, referer, origin, req) {
         const absUrl = new URL(line, playlistBaseUrl).href;
         const pUrl = new URL(proxyBase);
         pUrl.searchParams.set('url', absUrl);
-        pUrl.searchParams.set('_t', Date.now()); // Cache-buster
+        pUrl.searchParams.set('_t', Date.now()); 
         if (referer) pUrl.searchParams.set('referer', referer);
         if (origin) pUrl.searchParams.set('origin', origin);
         
