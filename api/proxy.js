@@ -44,7 +44,6 @@ module.exports = async (req, res) => {
 
             const targetResponse = await fetch(url, { headers, redirect: 'follow' });
             
-            // Handle Cookie persistence
             const setCookie = targetResponse.headers.get('set-cookie');
             if (setCookie) res.setHeader('Set-Cookie', setCookie);
 
@@ -86,6 +85,7 @@ function rewritePlaylist(body, playlistUrl, referer, origin, req) {
                     const absUri = new URL(p1, playlistBaseUrl).href;
                     const pUrl = new URL(proxyBase);
                     pUrl.searchParams.set('url', absUri);
+                    pUrl.searchParams.set('_t', Date.now()); // Cache-buster
                     if (referer) pUrl.searchParams.set('referer', referer);
                     if (origin) pUrl.searchParams.set('origin', origin);
                     return `URI="${pUrl.toString()}"`;
@@ -97,6 +97,7 @@ function rewritePlaylist(body, playlistUrl, referer, origin, req) {
         const absUrl = new URL(line, playlistBaseUrl).href;
         const pUrl = new URL(proxyBase);
         pUrl.searchParams.set('url', absUrl);
+        pUrl.searchParams.set('_t', Date.now()); // Cache-buster
         if (referer) pUrl.searchParams.set('referer', referer);
         if (origin) pUrl.searchParams.set('origin', origin);
         
